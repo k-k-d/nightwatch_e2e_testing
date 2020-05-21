@@ -1,0 +1,32 @@
+{
+  "src_folders": ["tests"],
+
+  "globals": {
+    "emailField": "input[class=\"MuiInputBase-input\"][type=\"string\"]",
+    "passwordField": "input[class=\"MuiInputBase-input\"][type=\"password\"]",
+    "confirmPasswordField": "input[class=\"MuiInputBase-input MuiInputBase-inputAdornedEnd\"][type=\"password\"]",
+    "submitButton": "button[type=\"submit\"]",
+    "freeSpace": "div[class=\"MuiBox-root jss18 jss2\"]"
+  },
+  
+  "webdriver": {
+    "start_process": true,
+    "port": 4444,
+    "server_path": "node_modules/.bin/geckodriver",
+    "cli_args": []
+    },
+  
+  "test_settings": {
+    "default": {
+    "launch_url": "https://nightwatchjs.org",
+      "desiredCapabilities" : {
+        "browserName" : "firefox",
+        "alwaysMatch": {
+          "moz:firefoxOptions": {
+            "args": []
+          }
+        }
+      }
+    }
+  }
+}
