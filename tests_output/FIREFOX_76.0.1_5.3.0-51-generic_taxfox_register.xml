@@ -5,9 +5,9 @@
 
   <testsuite name="taxfox_register"
     errors="0" failures="0" hostname="" id="" package="taxfox_register" skipped="0"
-    tests="5" time="6.757" timestamp="">
+    tests="5" time="8.032" timestamp="">
   
-    <testcase name="1" classname="taxfox_register" time="4.961" assertions="4">
+    <testcase name="1" classname="taxfox_register" time="6.299" assertions="4">
 
     
 
@@ -18,18 +18,11 @@
     
     </testcase>
   
-    <testcase name="2" classname="taxfox_register" time="0.3610" assertions="4">
+    <testcase name="2" classname="taxfox_register" time="0.5670" assertions="6">
 
     
 
     
-
-    
-
-    
-    </testcase>
-  
-    <testcase name="3" classname="taxfox_register" time="0.3590" assertions="4">
 
     
 
@@ -40,7 +33,9 @@
     
     </testcase>
   
-    <testcase name="5" classname="taxfox_register" time="0.6440" assertions="3">
+    <testcase name="3" classname="taxfox_register" time="0.3950" assertions="4">
+
+    
 
     
 
@@ -49,7 +44,16 @@
     
     </testcase>
   
-    <testcase name="7" classname="taxfox_register" time="0.4320" assertions="2">
+    <testcase name="5" classname="taxfox_register" time="0.4110" assertions="3">
+
+    
+
+    
+
+    
+    </testcase>
+  
+    <testcase name="7" classname="taxfox_register" time="0.3600" assertions="2">
 
     
 

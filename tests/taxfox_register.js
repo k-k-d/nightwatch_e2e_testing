@@ -22,8 +22,11 @@ module.exports = {
             .assert.not.elementPresent(passwordField, 'Password field not rendered')
             .assert.not.elementPresent(confirmPasswordField, 'Confirm password field not rendered')
             .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
-            // .waitForElementPresent('p[class="MuiFormHelperText-root"]', 15000, false)
-            // .assert.elementPresent('p[class="MuiFormHelperText-root"]', 'Helper text rendered')
+            .saveScreenshot("tests_output/scrnsht.png")
+            // .waitForElementPresent('.MuiInputBase-root', 15000, false)
+            // .assert.cssProperty('.Mui-error', 'border-color', 'rgb(94, 210, 145)')
+            .assert.elementPresent('.MuiFormHelperText-root', 'Helper text rendered')
+            .assert.containsText('.MuiFormHelperText-root', 'Not a valid Email', 'Helper text is correct')
             // .saveScreenshot("tests_output/scrnsht.png");
         ;
     },
@@ -39,7 +42,6 @@ module.exports = {
             .assert.not.elementPresent(confirmPasswordField, 'Confirm password field not rendered')
             .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
             .click(freeSpace)
-            // .assert.cssProperty('div[class="MuiInputBase-root"]', 'border-color', 'rgb(94, 210, 145)')
             // .waitForElementPresent('p[class="MuiFormHelperText-root"]', 15000, false)
             // .assert.elementPresent('p[class="MuiFormHelperText-root"]', 'Helper text rendered')
             // .saveScreenshot("tests_output/scrnsht.png");
