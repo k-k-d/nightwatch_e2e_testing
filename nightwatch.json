@@ -6,7 +6,9 @@
     "passwordField": "input[class=\"MuiInputBase-input\"][type=\"password\"]",
     "confirmPasswordField": "input[class=\"MuiInputBase-input MuiInputBase-inputAdornedEnd\"][type=\"password\"]",
     "submitButton": "button[type=\"submit\"]",
-    "freeSpace": "div[class=\"MuiBox-root jss18 jss2\"]"
+    "freeSpace": "div[class=\"MuiBox-root jss18 jss2\"]",
+    "passwordCriterionFailed": "li[class=\"MuiListItem-root jss275 MuiListItem-gutters\"]",
+    "helperText": ".MuiFormHelperText-root"
   },
   
   "webdriver": {

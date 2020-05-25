@@ -11,9 +11,10 @@ module.exports = {
             .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
         ;
     },
+
     "2": (browser) => {
 
-        const {emailField, passwordField, confirmPasswordField, submitButton, freeSpace} = browser.globals;
+        const {emailField, passwordField, confirmPasswordField, submitButton, helperText, freeSpace} = browser.globals;
 
         browser
             .setValue(emailField, "invalid_email")
@@ -22,60 +23,85 @@ module.exports = {
             .assert.not.elementPresent(passwordField, 'Password field not rendered')
             .assert.not.elementPresent(confirmPasswordField, 'Confirm password field not rendered')
             .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
-            .saveScreenshot("tests_output/scrnsht.png")
-            // .waitForElementPresent('.MuiInputBase-root', 15000, false)
-            // .assert.cssProperty('.Mui-error', 'border-color', 'rgb(94, 210, 145)')
-            .assert.elementPresent('.MuiFormHelperText-root', 'Helper text rendered')
-            .assert.containsText('.MuiFormHelperText-root', 'Not a valid Email', 'Helper text is correct')
-            // .saveScreenshot("tests_output/scrnsht.png");
+            .assert.elementPresent(helperText, 'Helper text rendered')
+            .assert.containsText(helperText, 'Not a valid Email', 'Helper text is correct')
+            .assert.elementPresent('.Mui-error', 'Red border on email field')
         ;
     },
+
     "3": (browser) => {
 
-        const {emailField, passwordField, confirmPasswordField, submitButton, freeSpace} = browser.globals;
+        const {emailField, passwordField, confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals;
 
         browser
             .clearValue(emailField)
+            .click(freeSpace)
             .setValue(emailField, "valid@email.com")
             .assert.domPropertyEquals(emailField, 'value', "valid@email.com", "Email value rendered correctly")
             .assert.elementPresent(passwordField, 'Password field rendered')
             .assert.not.elementPresent(confirmPasswordField, 'Confirm password field not rendered')
             .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
-            .click(freeSpace)
-            // .waitForElementPresent('p[class="MuiFormHelperText-root"]', 15000, false)
-            // .assert.elementPresent('p[class="MuiFormHelperText-root"]', 'Helper text rendered')
-            // .saveScreenshot("tests_output/scrnsht.png");
+            .assert.not.elementPresent(helperText, 'Helper text not rendered')
+            .assert.not.elementPresent('.Mui-error', 'Green border on email field')
         ;
     },
-    "5": (browser) => {
 
-        const {emailField, passwordField, confirmPasswordField, submitButton, freeSpace} = browser.globals;
+    "4": (browser) => {
+
+        const {passwordField, confirmPasswordField, submitButton, freeSpace, passwordCriterionFailed} = browser.globals;
 
         browser
+            .setValue(passwordField, "InvalPass")
+            .click(freeSpace)
+            .assert.domPropertyEquals(passwordField, 'value', "InvalPass", "Password value rendered correctly")
+            .assert.not.elementPresent(confirmPasswordField, 'Confirm password field not rendered')
+            .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
+            .assert.elementPresent(passwordCriterionFailed, 'Atleast one password criterion shows failure');
+        ;
+    },
+
+    "5": (browser) => {
+
+        const {passwordField, confirmPasswordField, submitButton, freeSpace, passwordCriterionFailed} = browser.globals;
+
+        browser
+            .clearValue(passwordField)
             .setValue(passwordField, "ValPass123!")
             .click(freeSpace)
             .assert.domPropertyEquals(passwordField, 'value', "ValPass123!", "Password value rendered correctly")
             .assert.elementPresent(confirmPasswordField, 'Confirm password field rendered')
             .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
-            // .assert.cssProperty('div[class="MuiInputBase-root"]', 'border-color', 'rgb(94, 210, 145)')
-            // .waitForElementPresent('p[class="MuiFormHelperText-root"]', 15000, false)
-            // .assert.elementPresent('p[class="MuiFormHelperText-root"]', 'Helper text rendered')
-            // .saveScreenshot("tests_output/scrnsht.png");
+            .assert.not.elementPresent(passwordCriterionFailed, 'All password criterion show success')
         ;
     },
-    "7": (browser) => {
 
-        const {emailField, passwordField, confirmPasswordField, submitButton, freeSpace} = browser.globals;
+    "6": (browser) => {
+
+        const {confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals;
 
         browser
+            .setValue(confirmPasswordField, "InvalPass")
+            .click(freeSpace)
+            .assert.domPropertyEquals(confirmPasswordField, 'value', "InvalPass", "Confirm password value rendered correctly")
+            .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
+            .assert.elementPresent(helperText, 'Helper text rendered')
+            .assert.containsText(helperText, 'Password and Confirm Password do not match', 'Helper text is correct')
+            .assert.elementPresent('.Mui-error', 'Red border on confirm password field')
+        ;
+    },
+
+    "7": (browser) => {
+
+        const {confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals;
+
+        browser
+            .clearValue(confirmPasswordField)
             .setValue(confirmPasswordField, "ValPass123!")
             .click(freeSpace)
             .assert.domPropertyEquals(confirmPasswordField, 'value', "ValPass123!", "Confirm password value rendered correctly")
-            .assert.domPropertyEquals(submitButton, 'disabled', false, 'Submit button disabled')
-            // .assert.cssProperty('div[class="MuiInputBase-root"]', 'border-color', 'rgb(94, 210, 145)')
-            // .waitForElementPresent('p[class="MuiFormHelperText-root"]', 15000, false)
-            // .assert.elementPresent('p[class="MuiFormHelperText-root"]', 'Helper text rendered')
-            // .saveScreenshot("tests_output/scrnsht.png");
+            .assert.domPropertyEquals(submitButton, 'disabled', false, 'Submit button enabled')
+            .assert.not.elementPresent(helperText, 'Helper text not rendered')
+            .assert.not.elementPresent('.Mui-error', 'Green border on confirm password field')
         ;
     }
 };
