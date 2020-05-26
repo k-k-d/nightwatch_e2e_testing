@@ -8,7 +8,9 @@
     "submitButton": "button[type=\"submit\"]",
     "freeSpace": "div[class=\"MuiBox-root jss18 jss2\"]",
     "passwordCriterionFailed": "li[class=\"MuiListItem-root jss275 MuiListItem-gutters\"]",
-    "helperText": ".MuiFormHelperText-root"
+    "helperText": ".MuiFormHelperText-root",
+    "TnC": "b > span",
+    "PP": "b > span:nth-child(2)"
   },
   
   "webdriver": {

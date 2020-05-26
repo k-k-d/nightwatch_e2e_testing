@@ -35,8 +35,8 @@ module.exports = {
 
         browser
             .clearValue(emailField)
-            .click(freeSpace)
             .setValue(emailField, "valid@email.com")
+            .click(freeSpace)
             .assert.domPropertyEquals(emailField, 'value', "valid@email.com", "Email value rendered correctly")
             .assert.elementPresent(passwordField, 'Password field rendered')
             .assert.not.elementPresent(confirmPasswordField, 'Confirm password field not rendered')
@@ -80,9 +80,9 @@ module.exports = {
         const {confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals;
 
         browser
-            .setValue(confirmPasswordField, "InvalPass")
+            .setValue(confirmPasswordField, "DifferentPass")
             .click(freeSpace)
-            .assert.domPropertyEquals(confirmPasswordField, 'value', "InvalPass", "Confirm password value rendered correctly")
+            .assert.domPropertyEquals(confirmPasswordField, 'value', "DifferentPass", "Confirm password value rendered correctly")
             .assert.domPropertyEquals(submitButton, 'disabled', true, 'Submit button disabled')
             .assert.elementPresent(helperText, 'Helper text rendered')
             .assert.containsText(helperText, 'Password and Confirm Password do not match', 'Helper text is correct')
@@ -103,5 +103,18 @@ module.exports = {
             .assert.not.elementPresent(helperText, 'Helper text not rendered')
             .assert.not.elementPresent('.Mui-error', 'Green border on confirm password field')
         ;
-    }
+    },
+
+    "8": (browser) => {
+
+        const {TnC, PP} = browser.globals;
+
+        browser
+            .click(TnC)
+            .assert.urlContains('uat.taxfox.co.in/en/termsandconditions', 'Terms and conditions navigated')
+            .back()
+            .click(PP)
+            .assert.urlContains('uat.taxfox.co.in/en/privacypolicy', 'Privacy policy navigated')
+        ;
+    },
 };
