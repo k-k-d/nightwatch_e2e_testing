@@ -5,9 +5,9 @@
 
   <testsuite name="taxfox_login_phone"
     errors="0" failures="0" hostname="" id="" package="taxfox_login_phone" skipped="0"
-    tests="1" time="16.00" timestamp="">
+    tests="1" time="15.79" timestamp="">
   
-    <testcase name="loginWithPhone" classname="taxfox_login_phone" time="16.00" assertions="1">
+    <testcase name="loginWithPhone" classname="taxfox_login_phone" time="15.79" assertions="1">
 
     
     </testcase>

@@ -5,7 +5,7 @@ module.exports = {
     "loginWithEmail": (browser) => {
 
         const {emailPhoneField, passwordField, submitButton, checkbox} = browser.globals.login_fields;
-        const {unlinked_credentials: credentials} = browser.globals;
+        const {linked_credentials: credentials} = browser.globals;
 
         browser
             .url(browser.globals.urls.login)
@@ -14,7 +14,7 @@ module.exports = {
             .click(checkbox)
             .click(submitButton)
             .pause(10000)
-            .assert.urlContains('/linkphone', 'Unlinked email redirects to add phone option')
+            .assert.urlContains('/dashboard/welcome', 'Linked email redirects to welcome page')
         ;
     }
 };
