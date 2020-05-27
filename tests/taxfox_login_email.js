@@ -13,7 +13,7 @@ module.exports = {
             .setValue(passwordField, credentials.password)
             .click(checkbox)
             .click(submitButton)
-            .pause(5000)
+            .pause(8000)
             .assert.urlContains('/linkphone')
         ;
     }
