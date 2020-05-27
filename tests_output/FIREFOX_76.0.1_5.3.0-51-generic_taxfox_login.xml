@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="4"
+            failures="1"
+            tests="2">
+
+  <testsuite name="taxfox_login"
+    errors="4" failures="1" hostname="" id="" package="taxfox_login" skipped="0"
+    tests="2" time="36.58" timestamp="">
+  
+    <testcase name="1" classname="taxfox_login" time="10.60" assertions="1">
+
+    
+    </testcase>
+  
+    <testcase name="2" classname="taxfox_login" time="25.98" assertions="1">  <failure message="Testing if the URL contains [0;33m&#39;/linkemail&#39;[0m in 5000ms - expected [0;32m&#34;contains &#39;/linkemail&#39;&#34;[0m but got: [0;31m&#34;https://uat.taxfox.co.in/en/dashboard/previous-filing/data&#34;[0m [0;90m(5075ms)[0m">    at Object.2 (/home/kkd/nightwatchjs_tests/tests/taxfox_login.js:31:21)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+
+    
+      <failure message="    at Object.2 (/home/kkd/nightwatchjs_tests/tests/taxfox_login.js:31:21)">    at processTicksAndRejections (internal/process/task_queues.js:97:5)</failure>
+      <error message="Error while running &#34;urlContains&#34; command: Testing if the URL contains [0;33m&#39;/linkemail&#39;[0m in 5000ms - expected [0;32m&#34;contains &#39;/linkemail&#39;&#34;[0m but got: [0;31m&#34;https://uat.taxfox.co.in/en/dashboard/previous-filing/data&#34;[0m [0;90m(5075ms)[0m" type="error">    at processTicksAndRejections (internal/process/task_queues.js:97:5)</error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+      [0;31m  NoSuchElementError: An error occurred while running .setValue() command on &lt;input[class=&#34;MuiInputBase-input&#34;][type=&#34;text&#34;]&gt;: undefined; undefined
+   {&#34;value&#34;:[]}[0m
+[0;90m       at processTicksAndRejections (internal/process/task_queues.js:97:5)[0m
+[0;31m  NoSuchElementError: An error occurred while running .setValue() command on &lt;input[class=&#34;MuiInputBase-input MuiInputBase-inputAdornedEnd&#34;][type=&#34;password&#34;]&gt;: undefined; undefined
+   {&#34;value&#34;:[]}[0m
+[0;90m       at processTicksAndRejections (internal/process/task_queues.js:97:5)[0m
+[0;31m  NoSuchElementError: An error occurred while running .click() command on &lt;input[name=&#34;checkedA&#34;]&gt;: undefined; undefined
+   {&#34;value&#34;:[]}[0m
+[0;90m       at processTicksAndRejections (internal/process/task_queues.js:97:5)[0m
+[0;31m  NoSuchElementError: An error occurred while running .click() command on &lt;button[type=&#34;submit&#34;]&gt;: undefined; undefined
+   {&#34;value&#34;:[]}[0m
+[0;90m       at processTicksAndRejections (internal/process/task_queues.js:97:5)[0m
+    </system-err>
+  
+
+  
+  </testsuite>
+</testsuites>

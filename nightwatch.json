@@ -2,15 +2,34 @@
   "src_folders": ["tests"],
 
   "globals": {
-    "emailField": "input[class=\"MuiInputBase-input\"][type=\"string\"]",
-    "passwordField": "input[class=\"MuiInputBase-input\"][type=\"password\"]",
-    "confirmPasswordField": "input[class=\"MuiInputBase-input MuiInputBase-inputAdornedEnd\"][type=\"password\"]",
-    "submitButton": "button[type=\"submit\"]",
-    "freeSpace": "div[class=\"MuiBox-root jss18 jss2\"]",
-    "passwordCriterionFailed": "li[class=\"MuiListItem-root jss275 MuiListItem-gutters\"]",
-    "helperText": ".MuiFormHelperText-root",
-    "TnC": "b > span",
-    "PP": "b > span:nth-child(2)"
+    "urls": {
+      "register": "https://uat.taxfox.co.in/en/register/",
+      "login": "https://uat.taxfox.co.in/en/login",
+      "TnC": "uat.taxfox.co.in/en/termsandconditions",
+      "PP": "uat.taxfox.co.in/en/privacypolicy"
+    },
+    "register_fields": {
+      "emailField": "input[class=\"MuiInputBase-input\"][type=\"string\"]",
+      "passwordField": "input[class=\"MuiInputBase-input\"][type=\"password\"]",
+      "confirmPasswordField": "input[class=\"MuiInputBase-input MuiInputBase-inputAdornedEnd\"][type=\"password\"]",
+      "submitButton": "button[type=\"submit\"]",
+      "freeSpace": "div[class=\"MuiBox-root jss18 jss2\"]",
+      "passwordCriterionFailed": "li[class=\"MuiListItem-root jss275 MuiListItem-gutters\"]",
+      "helperText": ".MuiFormHelperText-root",
+      "TnC": "b > span",
+      "PP": "b > span:nth-child(2)"
+    },
+    "login_fields": {
+      "emailPhoneField": "input[class=\"MuiInputBase-input\"][type=\"text\"]",
+      "passwordField": "input[class=\"MuiInputBase-input MuiInputBase-inputAdornedEnd\"][type=\"password\"]",
+      "submitButton": "button[type=\"submit\"]",
+      "checkbox": "input[name=\"checkedA\"]"
+    },
+    "credentials": {
+      "email": "rewiv60555@provlst.com",
+      "phone": "9532391092",
+      "password": "ValPass123!"
+    }
   },
   
   "webdriver": {
@@ -22,7 +41,7 @@
   
   "test_settings": {
     "default": {
-    "launch_url": "https://nightwatchjs.org",
+      "launch_url": "https://nightwatchjs.org",
       "desiredCapabilities" : {
         "browserName" : "firefox",
         "alwaysMatch": {

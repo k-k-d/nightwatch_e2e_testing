@@ -1,10 +1,13 @@
 module.exports = {
+
+    "@tags": ['register', 'all'],
+
     "1": (browser) => {
 
-        const {emailField, passwordField, confirmPasswordField, submitButton,} = browser.globals;
+        const {emailField, passwordField, confirmPasswordField, submitButton,} = browser.globals.register_fields;
 
         browser
-            .url('https://uat.taxfox.co.in/en/register/')
+            .url(browser.globals.urls.register)
             .assert.visible(emailField, 'Email field rendered')
             .assert.not.elementPresent(passwordField, 'Password field not rendered')
             .assert.not.elementPresent(confirmPasswordField, 'Confirm password field not rendered')
@@ -14,7 +17,7 @@ module.exports = {
 
     "2": (browser) => {
 
-        const {emailField, passwordField, confirmPasswordField, submitButton, helperText, freeSpace} = browser.globals;
+        const {emailField, passwordField, confirmPasswordField, submitButton, helperText, freeSpace} = browser.globals.register_fields;
 
         browser
             .setValue(emailField, "invalid_email")
@@ -31,7 +34,7 @@ module.exports = {
 
     "3": (browser) => {
 
-        const {emailField, passwordField, confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals;
+        const {emailField, passwordField, confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals.register_fields;
 
         browser
             .clearValue(emailField)
@@ -48,7 +51,7 @@ module.exports = {
 
     "4": (browser) => {
 
-        const {passwordField, confirmPasswordField, submitButton, freeSpace, passwordCriterionFailed} = browser.globals;
+        const {passwordField, confirmPasswordField, submitButton, freeSpace, passwordCriterionFailed} = browser.globals.register_fields;
 
         browser
             .setValue(passwordField, "InvalPass")
@@ -62,7 +65,7 @@ module.exports = {
 
     "5": (browser) => {
 
-        const {passwordField, confirmPasswordField, submitButton, freeSpace, passwordCriterionFailed} = browser.globals;
+        const {passwordField, confirmPasswordField, submitButton, freeSpace, passwordCriterionFailed} = browser.globals.register_fields;
 
         browser
             .clearValue(passwordField)
@@ -77,7 +80,7 @@ module.exports = {
 
     "6": (browser) => {
 
-        const {confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals;
+        const {confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals.register_fields;
 
         browser
             .setValue(confirmPasswordField, "DifferentPass")
@@ -92,7 +95,7 @@ module.exports = {
 
     "7": (browser) => {
 
-        const {confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals;
+        const {confirmPasswordField, submitButton, freeSpace, helperText} = browser.globals.register_fields;
 
         browser
             .clearValue(confirmPasswordField)
@@ -107,14 +110,14 @@ module.exports = {
 
     "8": (browser) => {
 
-        const {TnC, PP} = browser.globals;
+        const {TnC, PP} = browser.globals.register_fields;
 
         browser
             .click(TnC)
-            .assert.urlContains('uat.taxfox.co.in/en/termsandconditions', 'Terms and conditions navigated')
+            .assert.urlContains(browser.globals.urls.TnC, 'Terms and conditions navigated')
             .back()
             .click(PP)
-            .assert.urlContains('uat.taxfox.co.in/en/privacypolicy', 'Privacy policy navigated')
+            .assert.urlContains(browser.globals.urls.PP, 'Privacy policy navigated')
         ;
     },
 };

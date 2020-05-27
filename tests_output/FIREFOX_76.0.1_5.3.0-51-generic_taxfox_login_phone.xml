@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="taxfox_login_phone"
+    errors="0" failures="0" hostname="" id="" package="taxfox_login_phone" skipped="0"
+    tests="1" time="13.56" timestamp="">
+  
+    <testcase name="loginWithPhone" classname="taxfox_login_phone" time="13.56" assertions="1">
+
+    
+    </testcase>
+  
+
+  
+
+  
+  </testsuite>
+</testsuites>
