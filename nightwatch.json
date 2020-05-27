@@ -25,9 +25,14 @@
       "submitButton": "button[type=\"submit\"]",
       "checkbox": "input[name=\"checkedA\"]"
     },
+    "link_page": {
+      "field": "input[class=\"MuiInputBase-input\"][type=\"text\"]",
+      "submitButton": "button[type=\"button\"]"
+    },
     "credentials": {
       "email": "rewiv60555@provlst.com",
       "phone": "9532391092",
+      "phoneForEmail": "9532437525",
       "password": "ValPass123!"
     }
   },

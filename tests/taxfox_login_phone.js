@@ -13,7 +13,7 @@ module.exports = {
             .setValue(passwordField, credentials.password)
             .click(checkbox)
             .click(submitButton)
-            .pause(8000)
+            .pause(10000)
             .assert.urlContains('/linkemail')
         ;
     }

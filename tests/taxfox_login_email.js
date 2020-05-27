@@ -13,8 +13,20 @@ module.exports = {
             .setValue(passwordField, credentials.password)
             .click(checkbox)
             .click(submitButton)
-            .pause(8000)
+            .pause(10000)
             .assert.urlContains('/linkphone')
+        ;
+    },
+
+    "providePhone": (browser) => {
+        const {field, submitButton} = browser.globals.link_page;
+        const {credentials} = browser.globals;
+
+        browser
+            .setValue(field, credentials.phone)
+            .pause(5000)
+            .click(submitButton)
+            .pause(10000)
         ;
     }
 };
